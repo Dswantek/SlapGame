@@ -20,9 +20,9 @@ function Item(name, modifier, description) {
 }
 
 var items = {
-    hard: new Item("Hard", .5, "Just a little harder than normal"),
-    poison: new Item("Poison", 1, "Hurts the player from the inside"),
-    powerUp: new Item("Super", 4, "this makes you hit harder")
+    soft: new Item("Soft", .5, "Just a little softer than normal"),
+    poison: new Item("Poison", 2, "Hurts the player from the inside"),
+    powerUp: new Item("Super", 5, "this makes you hit harder")
 }
 
 // function giveItem() {
@@ -35,7 +35,7 @@ function addMods(player) {
     for (var i = 0; i < player.items.length; i++) {
         var increaseMod = player.items[i].modifier
         if (increaseMod > 0) {
-            totalMods += increaseMod
+            totalMods = increaseMod
         }else{
             totalMods
         }
@@ -64,8 +64,8 @@ update()
 
 function equipItem(playerChoice) {
     var output = ""
-    if (playerChoice === 'Hard') {
-        output = footballPlayer.items.push(items.hard)
+    if (playerChoice === 'Soft') {
+        output = footballPlayer.items.push(items.soft)
     } else if (playerChoice === 'Super') {
         output = footballPlayer.items.push(items.powerUp)
     } else {
